@@ -1,6 +1,6 @@
 ### USA Population extracter
 
-Generates population flatfiles for a specified US states
+Generates clean population CSVs for specified US states for use in charts and maps using U.S. census data.
 
 #### Install
 
@@ -16,3 +16,13 @@ Generates population flatfiles for a specified US states
 dependencies. Run:
 
     `pipenv install`
+
+#### Run
+
+From the terminal, make sure you're in the project directory. Run the following:
+
+```python run.py```
+
+Or:
+
+```pipenv run python run.py```
