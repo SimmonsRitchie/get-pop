@@ -15,7 +15,7 @@ def init_program():
     program_start_time = utc_now()
     timezone = program_start_time.tzinfo
     logs_config()
-    logging.info(f'Begin program run: {program_start_time} ({timezone} time)')
+    logging.info(f"Begin program run: {program_start_time} ({timezone} time)")
 
     # create or clean download dir
     if DIR_DATA.is_dir():

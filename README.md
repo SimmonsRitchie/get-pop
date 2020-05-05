@@ -1,8 +1,6 @@
-### Boilerplate python project - data analysis/scraping
+### USA Population extracter
 
-This is a simple boilerplate python project for data analysis or scraping.
-
-It includes logging, pipenv and pandas.
+Generates population flatfiles for a specified US states
 
 #### Install
 

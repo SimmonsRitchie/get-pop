@@ -1,7 +1,7 @@
 ### Project specific ignore files
-data/
 .idea/
 logs/output/
+data/
 
 ### gitignore Python template
 # Byte-compiled / optimized / DLL files
