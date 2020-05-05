@@ -1,6 +1,7 @@
 import pandas as pd
 from typing import List, Dict
 from definitions import PATH_USA_POP, DIR_DATA
+import logging
 
 
 def parse_states(
@@ -21,7 +22,6 @@ def parse_states(
     # filter - include only selected values
     selected_values_names = [x["name"] for x in selected_values]
     df = df[df[value_field].isin(selected_values_names)]
-    print(df)
 
     # option - clean value field
     if field_cleaners:
@@ -40,6 +40,10 @@ def parse_states(
     by_state = df.groupby(value_field)
 
     for name, group in by_state:
+        logging.info(f"Processing: {name}")
+        # get selected state dict
+        selected_state = list(filter(lambda x: x["name"] == name, selected_values))[0]
+
         # truncate
         selected_fields_input = [x["input_name"] for x in selected_fields]
         group = group[selected_fields_input]
@@ -47,13 +51,16 @@ def parse_states(
         # rename
         group = group.rename(columns=rename_schema)
 
+        # option - special processor (special funcs for doing extra stuff to df)
+        special_processors = selected_state.get("special_processors")
+        if special_processors:
+            for processor in special_processors:
+                group = processor(group)
+
         # produce csv
-        abbrv = list(filter(lambda x: x["name"] == name, selected_values))[0]["abbrv"]
+        abbrv = selected_state["abbrv"]
         filename = (
             f"{abbrv}-{file_partial}-pop.csv" if file_partial else f"{abbrv}-pop.csv"
         )
         output_path = DIR_DATA / filename
         group.to_csv(output_path, index=False)
-
-        print(name)
-        print(group)

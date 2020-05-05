@@ -3,6 +3,7 @@ from pathlib import Path
 from definitions import DIR_DATA
 from modules.helper.move import move_files
 from modules.init.init_program import init_program
+from modules.parse.helpers import clean_county, merge_nyc_boroughs
 from modules.parse.parse import parse_states
 
 
@@ -10,11 +11,6 @@ def main():
 
     # init
     init_program()
-
-    def clean_county(df, field):
-        df[field] = df[field].str.replace(" County", "")
-        return df
-
     # vars
     value_field = "STNAME"
     field_cleaners = {"CTYNAME": clean_county}
@@ -22,7 +18,7 @@ def main():
         {"name": "Pennsylvania", "abbrv": "pa"},
         {"name": "New Jersey", "abbrv": "nj"},
         {"name": "Delaware", "abbrv": "de"},
-        {"name": "New York", "abbrv": "ny"},
+        {"name": "New York", "abbrv": "ny", "special_processors": [merge_nyc_boroughs]},
         {"name": "Ohio", "abbrv": "oh"},
         {"name": "West Virginia", "abbrv": "wv"},
         {"name": "Maryland", "abbrv": "md"},
