@@ -27,10 +27,6 @@ def main():
         {"input_name": "CTYNAME", "output_name": "name"},
         {"input_name": "POPESTIMATE2019", "output_name": "population"},
     ]
-    dir_to = Path(
-        "/Volumes/Dan_T5/development/JavascriptProjects/spotlight/pages_and_apps/2020/coronavirus-dashboard"
-        "/src/data/pop/"
-    )
 
     # actions
     parse_states(
@@ -40,7 +36,6 @@ def main():
         field_cleaners=field_cleaners,
         file_partial="county",
     )
-    move_files(dir_from=DIR_DATA, dir_to=dir_to)
 
 
 if __name__ == "__main__":
