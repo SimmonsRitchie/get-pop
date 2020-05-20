@@ -2,6 +2,8 @@
 
 Generates clean population CSVs for specified northeast US states for use in charts and maps using U.S. census data.
 
+CSVs will be output in data directory in project root.
+
 #### Install
 
 1. Open the terminal. Clone the project repo.
