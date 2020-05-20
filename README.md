@@ -1,6 +1,6 @@
 ### USA Population extracter
 
-Generates clean population CSVs for specified US states for use in charts and maps using U.S. census data.
+Generates clean population CSVs for specified northeast US states for use in charts and maps using U.S. census data.
 
 #### Install
 
