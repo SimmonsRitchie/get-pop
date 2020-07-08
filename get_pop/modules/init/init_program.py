@@ -1,10 +1,10 @@
 import logging
 from dotenv import load_dotenv
 from definitions import DIR_DATA
-from logs.config.logging import logs_config
-from modules.helper.misc import delete_dir_contents
-from modules.helper.time import utc_now
-from modules.init.pandas_opts import pandas_opts
+from get_pop.logs.config.logging import logs_config
+from get_pop.modules.helper.misc import delete_dir_contents
+from get_pop.modules.helper.time import utc_now
+from get_pop.modules.init.pandas_opts import pandas_opts
 
 
 def init_program():
@@ -15,7 +15,7 @@ def init_program():
     program_start_time = utc_now()
     timezone = program_start_time.tzinfo
     logs_config()
-    logging.info(f"Begin program run: {program_start_time} ({timezone} time)")
+    logging.info(f"Initializing get_pop")
 
     # create or clean download dir
     if DIR_DATA.is_dir():

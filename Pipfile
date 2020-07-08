@@ -10,6 +10,8 @@ pyyaml = "*"
 python-dotenv = "*"
 pandas = "*"
 iso8601 = "*"
+get-pop = {editable = true, path = "."}
+click = "*"
 
 [requires]
 python_version = "3.6"
