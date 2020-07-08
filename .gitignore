@@ -1,6 +1,6 @@
 ### Project specific ignore files
 .idea/
-logs/output/
+get_pop/logs/output/
 data/
 
 ### gitignore Python template
