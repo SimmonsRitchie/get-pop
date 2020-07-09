@@ -1,6 +1,6 @@
 import pandas as pd
 from typing import List, Dict
-from definitions import PATH_USA_POP, DIR_DATA
+from get_pop.definitions import PATH_USA_POP, DIR_DATA
 import logging
 
 
