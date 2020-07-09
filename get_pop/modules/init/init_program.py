@@ -7,7 +7,14 @@ from get_pop.modules.helper.time import utc_now
 from get_pop.modules.init.pandas_opts import pandas_opts
 
 
-def init_program():
+def init_program(package_name: str = None):
+    """
+    Initializes program, inits logging, performs filesystem clean up, etc.
+
+    Args:
+        package_name (str): (optional) name of package
+    """
+
     # Load env vars
     load_dotenv()
 
@@ -15,7 +22,8 @@ def init_program():
     program_start_time = utc_now()
     timezone = program_start_time.tzinfo
     logs_config()
-    logging.info(f"Initializing get_pop")
+    if package_name:
+        logging.info(f"Initializing {package_name}")
 
     # create or clean download dir
     if DIR_DATA.is_dir():

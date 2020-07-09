@@ -19,4 +19,4 @@ To generate CSVs for specific states, use the 'getpop' command followed by the t
  
   Example 2:
   
-  ```getpop ny nj or pa```
+  ```getpop ny nj tx pa```

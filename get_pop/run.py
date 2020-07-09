@@ -17,7 +17,8 @@ clean_states = [x["abbrv"] for x in state_index]
 def main(states):
 
     # init
-    init_program()
+    package_name = "getpop"
+    init_program(package_name)
 
     # actions
     states = list(states)
@@ -33,3 +34,4 @@ def main(states):
         field_cleaners=field_cleaners,
         file_partial="county",
     )
+    logging.info(f"{package_name} complete")
