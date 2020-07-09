@@ -12,6 +12,9 @@ pandas = "*"
 iso8601 = "*"
 get-pop = {editable = true, path = "."}
 click = "*"
+twine = "*"
+setuptools = "*"
+wheel = "*"
 
 [requires]
 python_version = "3.6"
