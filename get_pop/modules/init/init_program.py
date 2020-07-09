@@ -1,6 +1,6 @@
 import logging
 from dotenv import load_dotenv
-from definitions import DIR_DATA
+from get_pop.definitions import DIR_DATA
 from get_pop.logs.config.logging import logs_config
 from get_pop.modules.helper.misc import delete_dir_contents
 from get_pop.modules.helper.time import utc_now

@@ -5,14 +5,16 @@ import os
 from pathlib import Path
 
 # This sets our root directory as the project directory
-ROOT_DIR = Path(os.path.dirname(os.path.abspath(__file__)))  # This is the project root
-PACKAGE_DIR = ROOT_DIR / "get_pop"  # This is the main package root
+PACKAGE_DIR = Path(
+    os.path.dirname(os.path.abspath(__file__))
+)  # This is the main package root
+CWD = Path(os.getcwd)
 
 # DIRECTORIES
 DIR_LOGS = PACKAGE_DIR / "logs"  # main dir for log-related files
 DIR_LOGS_OUTPUT = DIR_LOGS / "output"
 DIR_LOGS_CONFIG = DIR_LOGS / "config"
-DIR_DATA = ROOT_DIR / "data"
+DIR_DATA = CWD / "data"
 DIR_STATIC = PACKAGE_DIR / "static"
 
 # PATHS

@@ -1,24 +1,29 @@
-from setuptools import setup
+from setuptools import setup, find_packages
+
+requires = ["pyyaml", "python-dotenv", "pandas", "iso8601", "click"]
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
     name="get_pop",
-    version="1.4",
+    version="1.6",
     author="DSR",
     description="Command line tool to generates CSVs of population data for specified US states.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    # list folders, not files
-    package_dir={"get_pop": "get_pop"},
-    packages=[
-        "get_pop",
-        "get_pop/modules",
-        "get_pop/modules/helper",
-        "get_pop/modules/init",
-        "get_pop/modules/parse",
+    license="MIT",
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "Natural Language :: English",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3.6",
     ],
+    keywords=["population csv geography usa counties"],
+    # list folders, not files
+    packages=find_packages(exclude=["docs", "tests*"]),
+    install_requires=requires,
     scripts=["get_pop/bin/getpop"],
-    package_data={"get_pop": ["static/usa_pop_counties_2019.csv"]},
+    package_data={"get_pop": ["static/*"]},
 )
