@@ -1,8 +1,8 @@
-### USA Population extracter
+### Get Pop
 
-Generates clean population CSVs for specified northeast US states for use in charts and maps using U.S. census data.
+Command line tool to generates CSVs of population data for specified US states.
 
-CSVs will be output in data directory in project root.
+CSVs will be output in data/ in project root.
 
 #### Install
 
