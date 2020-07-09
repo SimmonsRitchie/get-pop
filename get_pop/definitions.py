@@ -8,7 +8,7 @@ from pathlib import Path
 PACKAGE_DIR = Path(
     os.path.dirname(os.path.abspath(__file__))
 )  # This is the main package root
-CWD = Path(os.getcwd)
+CWD = Path(os.getcwd())
 
 # DIRECTORIES
 DIR_LOGS = PACKAGE_DIR / "logs"  # main dir for log-related files
