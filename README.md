@@ -2,7 +2,7 @@
 
 Command line tool to generates CSVs of population data for specified US states.
 
-CSVs will be output in data/ in project root.
+CSVs will be output in the current working directory in a directory named 'data'.
 
 #### Install
 
