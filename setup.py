@@ -7,14 +7,14 @@ with open("README.md", "r") as fh:
 
 setup(
     name="get_pop",
-    version="1.7",
+    version="1.9",
     author="DSR",
     description="Command line tool to generates CSVs of population data for specified US states.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT",
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Natural Language :: English",
         "Programming Language :: Python",
