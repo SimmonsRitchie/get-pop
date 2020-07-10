@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="get_pop",
-    version="1.9",
+    version="1.91",
     author="DSR",
     description="Command line tool to generates CSVs of population data for specified US states.",
     long_description=long_description,
@@ -24,6 +24,6 @@ setup(
     # list folders, not files
     packages=find_packages(exclude=["docs", "tests*"]),
     install_requires=requires,
-    scripts=["get_pop/bin/getpop"],
+    entry_points={"console_scripts": ["pop=get_pop.get_pop:main"]},
     package_data={"get_pop": ["static/*"]},
 )
