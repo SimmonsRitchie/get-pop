@@ -16,6 +16,7 @@ pytest = "*"
 twine = "*"
 setuptools = "*"
 wheel = "*"
+tox = "*"
 
 [requires]
 python_version = "3.6"
