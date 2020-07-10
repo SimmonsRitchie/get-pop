@@ -24,6 +24,12 @@ setup(
     # list folders, not files
     packages=find_packages(exclude=["docs", "tests*"]),
     install_requires=requires,
-    entry_points={"console_scripts": ["getpop=get_pop.cli:main"]},
+    entry_points={
+        "console_scripts": [
+            "getpop=get_pop.cli:main",
+            "get_pop=get_pop.cli:main",
+            "get-pop=get_pop.cli:main",
+        ]
+    },
     package_data={"get_pop": ["static/*", "logs/config/logging.yaml"]},
 )

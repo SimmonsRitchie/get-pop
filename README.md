@@ -36,7 +36,7 @@ getpop ny nj tx
   
 #### Basic usage - python
   
-If you prefer, you can also call getpop from within your python module:
+If you prefer, you can also call get-pop from within your python module:
   
 ```
 from get_pop.get_pop import get_pop
