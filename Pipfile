@@ -10,6 +10,7 @@ pandas = "*"
 iso8601 = "*"
 get-pop = {editable = true, path = "."}
 click = "*"
+zipp = "*"
 
 [dev-packages]
 pytest = "*"

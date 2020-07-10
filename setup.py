@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-requires = ["pyyaml", "python-dotenv", "pandas", "iso8601", "click"]
+requires = ["pyyaml", "python-dotenv", "pandas", "iso8601", "click", "zipp"]
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
