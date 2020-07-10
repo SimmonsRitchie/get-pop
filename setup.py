@@ -26,7 +26,10 @@ setup(
     install_requires=requires,
     entry_points={"console_scripts": ["getpop=get_pop.cli:main"]},
     package_data={
-        "static": ["static/*"],
-        "logging": ["logs/config/logging.yaml", "logs/config/logging_test.yaml"],
+        "get_pop": [
+            "static/*",
+            "logs/config/logging.yaml",
+            "logs/config/logging_test.yaml",
+        ],
     },
 )
