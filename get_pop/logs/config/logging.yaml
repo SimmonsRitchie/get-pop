@@ -3,6 +3,8 @@ version: 1
 disable_existing_loggers: False
 formatters:
     simple:
+        format: '%(message)s'
+    advanced:
         format: '[%(asctime)s] %(levelname)8s --- %(message)s (%(filename)s:%(lineno)s)'
         datefmt: '%b %-d, %Y %-H:%M:%S %p'
 
@@ -16,7 +18,7 @@ handlers:
     debug_file_handler:
         class: logging.FileHandler
         level: DEBUG
-        formatter: simple
+        formatter: advanced
         filename: latest/debug.log
         encoding: utf8
         mode: w
@@ -24,7 +26,7 @@ handlers:
     info_file_handler:
         class: logging.FileHandler
         level: INFO
-        formatter: simple
+        formatter: advanced
         filename: latest/info.log
         encoding: utf8
         mode: w
@@ -33,7 +35,7 @@ handlers:
         class: logging.handlers.TimedRotatingFileHandler
         when: w0
         level: WARNING
-        formatter: simple
+        formatter: advanced
         filename: archive/warning.log
         backupCount: 5
         encoding: utf8
