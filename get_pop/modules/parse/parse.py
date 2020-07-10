@@ -1,13 +1,15 @@
 import pandas as pd
-from typing import List, Dict
+from typing import List, Dict, Union
 from get_pop.definitions import PATH_USA_POP, DIR_DATA
 import logging
+import pathlib
 
 
 def parse_states(
     value_field: str,
     selected_values: List[Dict],
     selected_fields: List[Dict],
+    save_dir: Union[pathlib.Path, str],
     *,
     field_cleaners: Dict = None,
     file_partial: str = None,
@@ -62,5 +64,6 @@ def parse_states(
         filename = (
             f"{abbrv}-{file_partial}-pop.csv" if file_partial else f"{abbrv}-pop.csv"
         )
-        output_path = DIR_DATA / filename
+        save_dir = pathlib.Path(save_dir) if isinstance(save_dir, str) else save_dir
+        output_path = save_dir / filename
         group.to_csv(output_path, index=False)
