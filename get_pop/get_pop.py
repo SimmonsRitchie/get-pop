@@ -12,15 +12,13 @@ from get_pop.static.constants import (
 clean_states = [x["abbrv"] for x in state_index]
 
 
-@click.command()
-@click.argument("states", nargs=-1, type=click.Choice(clean_states))
-def main(states):
+def get_pop(states: tuple) -> None:
 
     # init
     package_name = "getpop"
     init_program(package_name)
 
-    # actions
+    # process states
     states = list(states)
     logging.info(f"Selected states: {states}")
     selected_states = []
@@ -34,4 +32,6 @@ def main(states):
         field_cleaners=field_cleaners,
         file_partial="county",
     )
+
+    # end
     logging.info(f"{package_name} complete")
