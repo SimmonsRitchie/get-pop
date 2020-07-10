@@ -3,8 +3,6 @@ name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
-[dev-packages]
-
 [packages]
 pyyaml = "*"
 python-dotenv = "*"
@@ -12,7 +10,6 @@ pandas = "*"
 iso8601 = "*"
 get-pop = {editable = true, path = "."}
 click = "*"
-e = "*"
 
 [dev-packages]
 pytest = "*"
