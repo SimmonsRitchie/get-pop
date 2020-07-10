@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="get_pop",
-    version="1.92",
+    version="1.93",
     author="DSR",
     description="Command line tool that generates CSVs of county-level population data for specified US states.",
     long_description=long_description,
