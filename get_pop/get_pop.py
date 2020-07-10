@@ -12,14 +12,13 @@ from get_pop.static.constants import (
 clean_states = [x["abbrv"] for x in state_index]
 
 
-def get_pop(states: tuple) -> None:
+def get_pop(states: list) -> None:
 
     # init
     package_name = "getpop"
     init_program(package_name)
 
     # process states
-    states = list(states)
     logging.info(f"Selected states: {states}")
     selected_states = []
     for state in states:

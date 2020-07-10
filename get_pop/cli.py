@@ -8,4 +8,5 @@ clean_states = [x["abbrv"] for x in state_index]
 @click.command()
 @click.argument("states", nargs=-1, type=click.Choice(clean_states))
 def main(states: tuple) -> None:
-    get_pop(states)
+    states_list = list(states)  # convert from tuple to list
+    get_pop(states_list)
