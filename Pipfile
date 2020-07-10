@@ -15,6 +15,7 @@ click = "*"
 twine = "*"
 setuptools = "*"
 wheel = "*"
+e = "*"
 
 [requires]
 python_version = "3.6"
