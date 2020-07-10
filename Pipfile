@@ -12,10 +12,13 @@ pandas = "*"
 iso8601 = "*"
 get-pop = {editable = true, path = "."}
 click = "*"
+e = "*"
+
+[dev-packages]
+pytest = "*"
 twine = "*"
 setuptools = "*"
 wheel = "*"
-e = "*"
 
 [requires]
 python_version = "3.6"
