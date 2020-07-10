@@ -9,7 +9,7 @@ setup(
     name="get_pop",
     version="1.92",
     author="DSR",
-    description="Command line tool to generates CSVs of population data for specified US states.",
+    description="Command line tool that generates CSVs of population data for specified US states.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT",
