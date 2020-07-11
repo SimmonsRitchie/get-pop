@@ -4,6 +4,8 @@ A command line utility that generates CSVs of county-level population data for s
 
 Data is based on 2019 U.S. census data.
 
+The full documentation is hosted at [Read the Docs](https://get-pop.readthedocs.io/en/latest/index.html).
+
 ## Install
 
 ```pip install get-pop```
@@ -38,8 +40,6 @@ getpop ny nj tx
 Example #2: 
 
 To get CSVs for all states, use:
-
-
 
   
 ## Basic usage - python
