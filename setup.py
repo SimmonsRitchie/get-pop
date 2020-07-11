@@ -15,7 +15,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="get_pop",
-    version="1.94",
+    version="1.95",
     author="DSR",
     description="A python command line utility that generates CSVs of county-level population data for specified US "
     "states.",
