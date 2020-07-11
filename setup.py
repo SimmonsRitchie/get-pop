@@ -8,6 +8,7 @@ requires = [
     "click",
     "zipp",
     "mypy-extensions",
+    "sphinx",
 ]
 
 with open("README.md", "r") as fh:
@@ -15,7 +16,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="get_pop",
-    version="1.94.1",
+    version="1.94.2",
     author="DSR",
     description="A python command line utility that generates CSVs of county-level population data for specified US "
     "states.",
