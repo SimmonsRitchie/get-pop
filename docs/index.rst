@@ -10,6 +10,7 @@ Welcome to get-pop's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   ABOUT_DATA
    CONTRIBUTING
    CODE_OF_CONDUCT
    HISTORY
