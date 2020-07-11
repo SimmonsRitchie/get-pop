@@ -1,7 +1,7 @@
 [[source]]
 name = "pypi"
 url = "https://pypi.org/simple"
-verify_ssl = true
+verify_ssl = false
 
 [packages]
 pyyaml = "*"
@@ -10,8 +10,9 @@ pandas = "*"
 iso8601 = "*"
 click = "*"
 zipp = "*"
-get-pop = {editable = true, path = "."}
 mypy-extensions = "*"
+sphinx = "*"
+get-pop = {editable = true, path = "."}
 
 [dev-packages]
 pytest = "*"
