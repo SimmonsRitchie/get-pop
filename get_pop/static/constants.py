@@ -55,7 +55,7 @@ state_index = [
     {"name": "Wyoming", "abbrv": "wy"},
 ]
 
-selected_fields = [
+default_fields = [
     {"input_name": "FIPS", "output_name": "fips"},
     {"input_name": "CTYNAME", "output_name": "name"},
     {"input_name": "POPESTIMATE2019", "output_name": "population"},
