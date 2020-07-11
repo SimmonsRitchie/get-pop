@@ -3,15 +3,22 @@ from typing import List, Dict, Union, Callable
 from get_pop.definitions import PATH_USA_POP, DIR_DATA
 import logging
 import pathlib
+from mypy_extensions import TypedDict
+
+
+selected_values_type = List[TypedDict("state_dict", {"name": str, "abbrv": str})]
+selected_fields_type = List[
+    TypedDict("field_dict", {"input_name": str, "output_name": str})
+]
 
 
 def parse_states(
     value_field: str,
-    selected_values: List[Dict[str, str]],
-    selected_fields: List[Dict[str, str]],
+    selected_values: selected_values_type,
+    selected_fields: selected_fields_type,
     save_dir: Union[pathlib.Path, str],
     *,
-    field_cleaners: Dict[Callable[[pd.DataFrame, str], pd.DataFrame]] = None,
+    field_cleaners: Dict[str, Callable[[pd.DataFrame, str], pd.DataFrame]] = None,
     file_partial: str = None,
 ) -> None:
     """
@@ -19,9 +26,9 @@ def parse_states(
 
     Args:
         value_field (str): Field that will be used to filter data by.
-        selected_values (List[Dict[str, str]): A list of dictionaries relating to the state's selected for data
+        selected_values (selected_values_type): A list of dictionaries relating to the state's selected for data
             extraction. Each dict has a key-value pairs for the full name of the state and it's two-letter abbreviation.
-        selected_fields: List[Dict[str, str]]: A list of dictionaries that represent the fields that will be selected from
+        selected_fields (selected_fields_type): A list of dictionaries that represent the fields that will be selected from
             the U.S. Census CSV, and how the field will be represented in the final CSV.
         save_dir: Union[pathlib.Path, str]: Path where processed state CSVs will be saved
         field_cleaners (Dict[Callable[[pd.DataFrame, str], pd.DataFrame]]): (Optional) function that cleans a
@@ -41,7 +48,6 @@ def parse_states(
     # filter - include only selected values
     selected_values_names = [x["name"] for x in selected_values]
     df = df[df[value_field].isin(selected_values_names)]
-    print(df)
 
     # option - clean value field
     if field_cleaners:
@@ -61,10 +67,16 @@ def parse_states(
 
     for name, group in by_state:
         logging.info(f"Processing: {name}")
-        # get selected state dict
+
+        # get selected state dict for processing instructions
         selected_state = list(filter(lambda x: x["name"] == name, selected_values))[0]
 
-        # truncate
+        # generate FIPS code
+        group["STATE"] = group["STATE"].astype(str).str.zfill(2)
+        group["COUNTY"] = group["COUNTY"].astype(str).str.zfill(3)
+        group["FIPS"] = group["STATE"] + group["COUNTY"]
+
+        # truncate cols in df
         selected_fields_input = [x["input_name"] for x in selected_fields]
         group = group[selected_fields_input]
 
