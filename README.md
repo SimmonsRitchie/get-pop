@@ -33,6 +33,12 @@ getpop ny nj tx
 >> Processing: Texas
 >> getpop complete
 ```
+Example #2: 
+
+To get CSVs for all states, use:
+
+
+
   
 ## Basic usage - python
   

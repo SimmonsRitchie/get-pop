@@ -2,7 +2,7 @@ import click
 from get_pop.get_pop import get_pop
 from get_pop.static.constants import state_index
 
-clean_states = [x["abbrv"] for x in state_index]
+clean_states = [x["abbrv"] for x in state_index] + ["all"]
 
 
 @click.command()

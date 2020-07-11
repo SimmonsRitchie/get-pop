@@ -72,9 +72,12 @@ def parse_states(
         selected_state = list(filter(lambda x: x["name"] == name, selected_values))[0]
 
         # generate FIPS code
-        group["STATE"] = group["STATE"].astype(str).str.zfill(2)
-        group["COUNTY"] = group["COUNTY"].astype(str).str.zfill(3)
-        group["FIPS"] = group["STATE"] + group["COUNTY"]
+        # Temporarily disabling SettingWithCopy warning
+        pd.reset_option("mode.chained_assignment")
+        with pd.option_context("mode.chained_assignment", None):
+            group["STATE"] = group["STATE"].astype(str).str.zfill(2)
+            group["COUNTY"] = group["COUNTY"].astype(str).str.zfill(3)
+            group["FIPS"] = group["STATE"] + group["COUNTY"]
 
         # truncate cols in df
         selected_fields_input = [x["input_name"] for x in selected_fields]
