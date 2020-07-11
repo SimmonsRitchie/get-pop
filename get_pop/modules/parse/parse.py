@@ -3,13 +3,7 @@ from typing import List, Dict, Union, Callable
 from get_pop.definitions import PATH_USA_POP, DIR_DATA
 import logging
 import pathlib
-from mypy_extensions import TypedDict
-
-
-selected_values_type = List[TypedDict("state_dict", {"name": str, "abbrv": str})]
-selected_fields_type = List[
-    TypedDict("field_dict", {"input_name": str, "output_name": str})
-]
+from get_pop.definitions import selected_fields_type, selected_values_type
 
 
 def parse_states(
