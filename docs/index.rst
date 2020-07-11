@@ -12,6 +12,7 @@ Welcome to get-pop's documentation!
 
    CONTRIBUTING
    CODE_OF_CONDUCT
+   HISTORY
 
 
 
