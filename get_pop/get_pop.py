@@ -31,9 +31,14 @@ def get_pop(states: List[str], save_dir: Union[pathlib.Path, str] = DIR_DATA) ->
     # process states
     logging.info(f"Selected states: {states}")
     selected_states = []
-    for state in states:
-        index_item = [x for x in state_index if x["abbrv"].lower() in state.lower()][0]
-        selected_states.append(index_item)
+    if "all" in states[0]:
+        selected_states = state_index
+    else:
+        for state in states:
+            index_item = [
+                x for x in state_index if x["abbrv"].lower() in state.lower()
+            ][0]
+            selected_states.append(index_item)
     parse_states(
         value_field=value_field,
         selected_values=selected_states,
