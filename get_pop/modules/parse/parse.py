@@ -1,5 +1,5 @@
 import pandas as pd
-from typing import List, Dict, Union
+from typing import List, Dict, Union, Callable
 from get_pop.definitions import PATH_USA_POP, DIR_DATA
 import logging
 import pathlib
@@ -7,13 +7,30 @@ import pathlib
 
 def parse_states(
     value_field: str,
-    selected_values: List[Dict],
-    selected_fields: List[Dict],
+    selected_values: List[Dict[str, str]],
+    selected_fields: List[Dict[str, str]],
     save_dir: Union[pathlib.Path, str],
     *,
-    field_cleaners: Dict = None,
+    field_cleaners: Dict[Callable[[pd.DataFrame, str], pd.DataFrame]] = None,
     file_partial: str = None,
 ) -> None:
+    """
+    Outputs CSVs of state data after parsing a large CSV of U.S. county-level census data for selected states.
+
+    Args:
+        value_field (str): Field that will be used to filter data by.
+        selected_values (List[Dict[str, str]): A list of dictionaries relating to the state's selected for data
+            extraction. Each dict has a key-value pairs for the full name of the state and it's two-letter abbreviation.
+        selected_fields: List[Dict[str, str]]: A list of dictionaries that represent the fields that will be selected from
+            the U.S. Census CSV, and how the field will be represented in the final CSV.
+        save_dir: Union[pathlib.Path, str]: Path where processed state CSVs will be saved
+        field_cleaners (Dict[Callable[[pd.DataFrame, str], pd.DataFrame]]): (Optional) function that cleans a
+            specified field
+        file_partial (str): (Optional) String that is used to determine part of final CSV filename for each state.
+
+    Returns:
+        None. Output is saved as CSV files.
+    """
 
     # read
     df = pd.read_csv(PATH_USA_POP, encoding="ISO-8859-1")
@@ -24,6 +41,7 @@ def parse_states(
     # filter - include only selected values
     selected_values_names = [x["name"] for x in selected_values]
     df = df[df[value_field].isin(selected_values_names)]
+    print(df)
 
     # option - clean value field
     if field_cleaners:
