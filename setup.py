@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-from get_pop import __version__
+from get_pop import __version__, __author__, __project__
 
 requires = [
     "pyyaml",
@@ -16,9 +16,9 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="get_pop",
+    name=__project__,
     version=__version__,
-    author="DSR",
+    author=__author__,
     description="A python command line utility that generates CSVs of county-level population data for specified US "
     "states.",
     long_description=long_description,
