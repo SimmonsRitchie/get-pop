@@ -4,6 +4,7 @@ from get_pop.static.constants import (
     state_index,
     value_field,
     field_cleaners,
+    default_fields,
 )
 import pathlib
 from get_pop.definitions import selected_fields_type
@@ -18,7 +19,7 @@ def get_pop(
     states: List[str],
     save_dir: Union[pathlib.Path, str] = DIR_DATA,
     *,
-    selected_fields=selected_fields_type,
+    selected_fields: selected_fields_type = default_fields,
 ) -> None:
     """
     Takes a list of 2-letter US state postal codes, returns CSVs for each state.
