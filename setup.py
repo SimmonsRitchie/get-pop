@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+from get_pop import __version__
 
 requires = [
     "pyyaml",
@@ -16,7 +17,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="get_pop",
-    version="1.94.2",
+    version=__version__,
     author="DSR",
     description="A python command line utility that generates CSVs of county-level population data for specified US "
     "states.",
