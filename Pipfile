@@ -11,6 +11,7 @@ iso8601 = "*"
 click = "*"
 zipp = "*"
 get-pop = {editable = true, path = "."}
+mypy-extensions = "*"
 
 [dev-packages]
 pytest = "*"
@@ -18,7 +19,6 @@ twine = "*"
 setuptools = "*"
 wheel = "*"
 tox = "*"
-
 
 [requires]
 python_version = "3.6"
