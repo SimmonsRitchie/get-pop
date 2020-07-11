@@ -1,9 +1,12 @@
-def clean_county(df, field):
+import pandas as pd
+
+
+def clean_county(df: pd.DataFrame, field: str):
     df[field] = df[field].str.replace(" County", "")
     return df
 
 
-def merge_nyc_boroughs(df):
+def merge_nyc_boroughs(df: pd.DataFrame):
     """
     Combines the five buroughs to create NYC row
     """
