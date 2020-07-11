@@ -1,5 +1,3 @@
-from get_pop import __version__, __author__, __project__
-
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -20,12 +18,12 @@ sys.path.insert(0, os.path.abspath("."))
 
 # -- Project information -----------------------------------------------------
 
-project = __project__
-copyright = f"2020, {__author__}"
-author = __author__
+project = "get_pop"
+copyright = f"2020, DSR"
+author = "DSR"
 
 # The full version, including alpha/beta/rc tags
-release = __version__
+release = "1.94.3"
 
 
 # -- General configuration ---------------------------------------------------
