@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath("."))
 
 # -- Project information -----------------------------------------------------
 
-project = "get_pop"
+project = "get-pop"
 copyright = f"2020, DSR"
 author = "DSR"
 
