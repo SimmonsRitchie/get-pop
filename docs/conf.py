@@ -12,6 +12,7 @@
 #
 import os
 import sys
+from get_pop import __version__
 
 # sys.path.insert(0, os.path.abspath("../get_pop"))
 sys.path.insert(0, os.path.abspath("."))
@@ -25,7 +26,7 @@ copyright = f"2020, DSR"
 author = "DSR"
 
 # The full version, including alpha/beta/rc tags
-release = "1.94.3"
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------
