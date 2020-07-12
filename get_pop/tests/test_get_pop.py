@@ -11,7 +11,6 @@ def test_get_pop_creates_file(tmpdir):
     get_pop(input_state, save_dir=tmpdir)
 
     # assert
-    p = tmpdir.glob("**/*")
     assert (tmpdir / "ny-county-pop.csv").is_file()
     assert not (tmpdir / "tx-county-pop.csv").is_file()
 
