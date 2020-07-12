@@ -9,10 +9,8 @@ python-dotenv = "*"
 pandas = "*"
 iso8601 = "*"
 click = "*"
-zipp = "*"
 mypy-extensions = "*"
 sphinx = "*"
-get-pop = {editable = true, path = "."}
 
 [dev-packages]
 pytest = "*"
