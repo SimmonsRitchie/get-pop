@@ -10,6 +10,7 @@ requires = [
     "zipp",
     "mypy-extensions",
     "sphinx",
+    "sphinx-rtd-theme",
 ]
 
 with open("README.rst", "r") as fh:
