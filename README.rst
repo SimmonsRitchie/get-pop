@@ -18,14 +18,18 @@ Data is based on 2019 U.S. census data.
 The full documentation is hosted at `Read the Docs <https://get-pop.readthedocs.io/en/latest/index.html>`_
 
 Install
-------------------------------------
+----------
 
 ::
 
     pip install get-pop
 
-Basic usage - command line
-------------------------------------
+Basic usage
+--------------
+
+Command line
+================
+
 Type 'getpop' followed by the two letter postal code for one or more states. CSVs will be output in a new directory
 called 'data' in the current working directory.
  
@@ -62,10 +66,10 @@ To get CSVs for all states, use:
     getpop all
 
   
-Basic usage - python
-------------------------------------
+Programmatic
+================
 
-If you prefer, you can also import and call get-pop from within python:
+If you prefer, you can also import and call get-pop from within your python app:
   
 ::
 
@@ -76,6 +80,6 @@ If you prefer, you can also import and call get-pop from within python:
 
 
 License
-------------------------
+-----------
 
 `MIT <https://choosealicense.com/licenses/mit/>`_
