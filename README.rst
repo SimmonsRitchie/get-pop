@@ -1,8 +1,15 @@
 get-pop
 ---------
 
+.. image:: https://badge.fury.io/py/get-pop.svg
+    :target: https://badge.fury.io/py/get-pop
+
 .. image:: https://travis-ci.org/SimmonsRitchie/get-pop.svg?branch=master
     :target: https://travis-ci.org/SimmonsRitchie/get-pop
+
+.. image:: https://readthedocs.org/projects/get-pop/badge/?version=latest
+    :target: https://get-pop.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 A command line utility that generates CSVs of county-level population data for specified US states.
 
