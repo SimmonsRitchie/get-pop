@@ -92,5 +92,6 @@ def parse_states(
             f"{abbrv}-{file_partial}-pop.csv" if file_partial else f"{abbrv}-pop.csv"
         )
         save_dir = pathlib.Path(save_dir) if isinstance(save_dir, str) else save_dir
+        save_dir.mkdir(exist_ok=True)
         output_path = save_dir / filename
         group.to_csv(output_path, index=False)

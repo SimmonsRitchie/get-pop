@@ -29,14 +29,6 @@ def init_program(package_name: str = None) -> datetime:
     if package_name:
         logging.info(f"Initializing {package_name}")
 
-    # create or clean download dir
-    if DIR_DATA.is_dir():
-        # delete files from previous run
-        delete_dir_contents(DIR_DATA)
-    else:
-        logging.info("Data directory doesn't exist - building")
-        DIR_DATA.mkdir()
-
     pandas_opts()
 
     return program_start_time
