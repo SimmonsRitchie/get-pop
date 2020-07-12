@@ -64,16 +64,3 @@ Before you submit a pull request, check that it meets these guidelines:
    https://travis-ci.org/notebooktoall/notebooktoall/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
-
-Deploying
----------
-
-A reminder for the maintainers on how to deploy.
-Make sure all your changes are committed (including an entry in HISTORY.rst).
-Then run::
-
-$ bumpversion patch # possible: major / minor / patch
-$ git push
-$ git push --tags
-
-Travis will then deploy to PyPI if tests pass.
