@@ -16,8 +16,6 @@ get-pop - documentation
    CODE_OF_CONDUCT
    HISTORY
 
-
-
 Indices and tables
 ==================
 
