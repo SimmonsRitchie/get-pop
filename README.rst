@@ -11,6 +11,7 @@ get-pop
     :target: https://get-pop.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
+
 A command line utility that generates CSVs of county-level population data for specified US states.
 
 Data is based on 2019 U.S. census data.
