@@ -1,5 +1,9 @@
 get-pop
 ---------
+
+.. image:: https://travis-ci.org/SimmonsRitchie/get-pop.svg?branch=master
+    :target: https://travis-ci.org/SimmonsRitchie/get-pop
+
 A command line utility that generates CSVs of county-level population data for specified US states.
 
 Data is based on 2019 U.S. census data.
