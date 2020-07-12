@@ -12,6 +12,7 @@ click = "*"
 mypy-extensions = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
+twine = "*"
 
 [dev-packages]
 pytest = "*"
@@ -19,6 +20,7 @@ twine = "*"
 setuptools = "*"
 wheel = "*"
 tox = "*"
+restructuredtext-lint = "*"
 
 [requires]
 python_version = "3.6"
