@@ -8,10 +8,10 @@ Contributions are welcome and greatly appreciated!
 
 Please ensure you follow our Code of Conduct.
 
-Types of Contributions
+Types of contributions
 ----------------------
 
-Report Bugs
+Report bugs
 ~~~~~~~~~~~
 
 If you are reporting a bug, please include:
@@ -20,25 +20,25 @@ If you are reporting a bug, please include:
 * Any details about your local setup that might be helpful in troubleshooting.
 * Detailed steps to reproduce the bug.
 
-Fix Bugs
+Fix bugs
 ~~~~~~~~
 
 Look through the GitHub issues for bugs. Anything tagged with "bug" and "help
 wanted" is open to whoever wants to implement it.
 
-Implement Features
+Implement features
 ~~~~~~~~~~~~~~~~~~
 
 Look through the GitHub issues for features. Anything tagged with "enhancement"
 and "help wanted" is open to whoever wants to implement it.
 
-Write Documentation
+Write documentation
 ~~~~~~~~~~~~~~~~~~~
 
 This project could always use more documentation, whether as part of the
 official project docs, in docstrings, or even on the web in blog posts.
 
-Submit Feedback
+Submit feedback
 ~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue for this repo on github.
@@ -51,7 +51,7 @@ If you are proposing a feature:
   are welcome :)
 
 
-Pull Request Guidelines
+Pull request guidelines
 -----------------------
 
 Before you submit a pull request, check that it meets these guidelines:
