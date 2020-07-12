@@ -2,6 +2,11 @@
 History
 =======
 
+1.94.3 (2020–07–12)
+------------------------------
+
+* Improve documentation to work better with sphinx and Read the Docs.
+
 1.94.2 (2020–07–11)
 ------------------------------
 
@@ -12,3 +17,8 @@ History
 ------------------------------
 
 * Added FIPS codes to CSV output.
+
+Earlier than 1.94.1
+----------------------------
+
+* Project was in experimental status.

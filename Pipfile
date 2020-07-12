@@ -11,6 +11,7 @@ iso8601 = "*"
 click = "*"
 mypy-extensions = "*"
 sphinx = "*"
+sphinx-rtd-theme = "*"
 
 [dev-packages]
 pytest = "*"
