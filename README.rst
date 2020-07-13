@@ -89,15 +89,19 @@ Command line
 
 In addition to take state abbreviations as positional arguments, getpop takes a handful of optional arguments:
 
+
 --save-dir, --dir
-Absolute path of directory where CSV files will be output. Defaults to saving them in /data in the current working
-directory
+
+    TEXT. Absolute path of directory where CSV files will be output. Defaults to saving them in /data in the current
+    working directory
 
 --clear-dir, --cdir
-Deletes all existing files in save_dir path. Defaults to false.
+
+    Deletes all existing files in save_dir path. Defaults to false.
 
 --help
-Show this message and exit.
+
+    Show this message and exit.
 
 Example:
 
