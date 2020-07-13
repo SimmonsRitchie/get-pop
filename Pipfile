@@ -10,9 +10,6 @@ pandas = "*"
 iso8601 = "*"
 click = "*"
 mypy-extensions = "*"
-sphinx = "*"
-sphinx-rtd-theme = "*"
-twine = "*"
 
 [dev-packages]
 pytest = "*"
@@ -21,6 +18,9 @@ setuptools = "*"
 wheel = "*"
 tox = "*"
 restructuredtext-lint = "*"
+sphinx = "*"
+sphinx-rtd-theme = "*"
+twine = "*"
 
 [requires]
 python_version = "3.6"
