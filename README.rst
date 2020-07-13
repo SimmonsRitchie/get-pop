@@ -12,7 +12,6 @@ get-pop
     :alt: Documentation Status
 
 
-
 A command line utility that generates CSVs of county-level population data for specified US states.
 
 Data is based on 2019 U.S. census data.
@@ -90,21 +89,20 @@ Command line
 
 In addition to take state abbreviations as positional arguments, getpop takes a handful of optional arguments:
 
+``--save-dir, --dir``
 
---save-dir, --dir
-
-    TEXT. Absolute path of directory where CSV files will be output. Defaults to saving them in /data in the current
-    working directory
-
-
---clear-dir, --cdir
-
-    Deletes all existing files in save_dir path. Defaults to false.
+TEXT. Absolute path of directory where CSV files will be output. Defaults to saving them in /data in the current
+working directory
 
 
---help
+``--clear-dir, --cdir``
 
-    Show this message and exit.
+Deletes all existing files in save_dir path. Defaults to false.
+
+
+``--help``
+
+Show this message and exit.
 
 
 Example:
