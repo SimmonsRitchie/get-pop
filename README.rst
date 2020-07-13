@@ -87,13 +87,13 @@ Advanced usage
 Command line
 ================
 
-Getpop takes one or more two-letter state abbreviations as positional arguments in order to determine what CSVs to
-create. Getpop's CLI also takes a handful of optional arguments that modify its actions.
+Getpop takes one or more two-letter state abbreviations as positional arguments in order to determine which state
+CSVs will be generated. Getpop's CLI also takes a handful of optional arguments that modify its actions.
 
 
 ``--save-dir, --dir``
 
-TEXT. Path of directory where CSV files will be output. Defaults to saving them in /data in the current
+TEXT. Path of directory where CSV files will be saved. Defaults to saving them in /data in the current
 working directory. If the directory you specify doesn't exist, getpop will create it.
 
 
