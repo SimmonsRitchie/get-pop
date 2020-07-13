@@ -87,12 +87,14 @@ Advanced usage
 Command line
 ================
 
-In addition to take state abbreviations as positional arguments, getpop takes a handful of optional arguments:
+Getpop takes one or more two-letter state abbreviations as positional arguments in order to determine what CSVs to
+create. Getpop's CLI also takes a handful of optional arguments that modify its actions.
+
 
 ``--save-dir, --dir``
 
-TEXT. Absolute path of directory where CSV files will be output. Defaults to saving them in /data in the current
-working directory
+TEXT. Path of directory where CSV files will be output. Defaults to saving them in /data in the current
+working directory. If the directory you specify doesn't exist, getpop will create it.
 
 
 ``--clear-dir, --cdir``
@@ -105,11 +107,12 @@ Deletes all existing files in save_dir path. Defaults to false.
 Show this message and exit.
 
 
-Example:
+Here's an example that stores the CSVs in a directory in your current working directory called
+'your_custom_directory' and clears any existing files in it if they exist.
 
 ::
 
-    getpop ny ca tx --save-dir ./state_csvs --clear-dir
+    getpop ny ca tx --save-dir ./your_custom_directory --clear-dir
 
 License
 -----------
