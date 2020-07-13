@@ -7,10 +7,7 @@ requires = [
     "pandas",
     "iso8601",
     "click",
-    "zipp",
     "mypy-extensions",
-    "sphinx",
-    "sphinx-rtd-theme",
 ]
 
 with open("README.rst", "r") as fh:
