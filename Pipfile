@@ -20,7 +20,6 @@ tox = "*"
 restructuredtext-lint = "*"
 sphinx = "*"
 sphinx-rtd-theme = "*"
-twine = "*"
 
 [requires]
 python_version = "3.6"
