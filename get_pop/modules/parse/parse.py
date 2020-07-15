@@ -1,6 +1,6 @@
 import pandas as pd
-from typing import List, Dict, Union, Callable
-from get_pop.definitions import PATH_USA_POP, DIR_DATA
+from typing import Dict, Callable
+from get_pop.definitions import PATH_USA_POP, parsed_data_type
 import logging
 import pathlib
 from get_pop.definitions import selected_fields_type, selected_values_type
@@ -10,11 +10,9 @@ def parse_states(
     value_field: str,
     selected_values: selected_values_type,
     selected_fields: selected_fields_type,
-    save_dir: Union[pathlib.Path, str],
     *,
     field_cleaners: Dict[str, Callable[[pd.DataFrame, str], pd.DataFrame]] = None,
-    file_partial: str = None,
-) -> None:
+) -> parsed_data_type:
     """
     Outputs CSVs of state data after parsing a large CSV of U.S. county-level census data for selected states.
 
@@ -24,13 +22,11 @@ def parse_states(
             extraction. Each dict has a key-value pairs for the full name of the state and it's two-letter abbreviation.
         selected_fields (selected_fields_type): A list of dictionaries that represent the fields that will be selected from
             the U.S. Census CSV, and how the field will be represented in the final CSV.
-        save_dir: Union[pathlib.Path, str]: Path where processed state CSVs will be saved
         field_cleaners (Dict[Callable[[pd.DataFrame, str], pd.DataFrame]]): (Optional) function that cleans a
             specified field
-        file_partial (str): (Optional) String that is used to determine part of final CSV filename for each state.
 
     Returns:
-        None. Output is saved as CSV files.
+        parsed_data_type - A list of dictionaries with parsed data
     """
 
     # read
@@ -59,6 +55,7 @@ def parse_states(
     # group by
     by_state = df.groupby(value_field)
 
+    payload = []
     for name, group in by_state:
         logging.info(f"Processing: {name}")
 
@@ -88,10 +85,6 @@ def parse_states(
 
         # produce csv
         abbrv = selected_state["abbrv"]
-        filename = (
-            f"{abbrv}-{file_partial}-pop.csv" if file_partial else f"{abbrv}-pop.csv"
-        )
-        save_dir = pathlib.Path(save_dir) if isinstance(save_dir, str) else save_dir
-        save_dir.mkdir(exist_ok=True)
-        output_path = save_dir / filename
-        group.to_csv(output_path, index=False)
+        payload.append({"name": abbrv, "data": group})
+
+    return payload
