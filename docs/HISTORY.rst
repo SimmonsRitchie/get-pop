@@ -7,6 +7,7 @@ History
 ------------------------------
 
 * Add 'quiet mode' to CLI, disabling stdout during program run.
+* Adjust abbreviated flag for --save-dir from --dir to -d
 
 1.94.7 (2020–07–14)
 ------------------------------
