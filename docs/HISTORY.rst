@@ -2,7 +2,13 @@
 History
 =======
 
-1.94.7 (2020–07–13)
+
+1.94.8 (2020–07–14)
+------------------------------
+
+* Add 'quiet mode' to CLI, disabling stdout during program run.
+
+1.94.7 (2020–07–14)
 ------------------------------
 
 * Save CSVs in current working directory rather than 'data' directory in CWD.
