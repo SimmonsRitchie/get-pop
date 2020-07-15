@@ -96,6 +96,11 @@ TEXT. Path of directory where CSV files will be saved. Defaults to saving them i
 working directory. If the directory you specify doesn't exist, getpop will create it.
 
 
+``-q, --quiet``
+
+FLAG. Disables stdout during program run
+
+
 ``--help``
 
 Returns a list of getpop's CLI options.
