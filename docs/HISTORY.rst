@@ -2,6 +2,13 @@
 History
 =======
 
+1.94.7 (2020–07–13)
+------------------------------
+
+* Save CSVs in current working directory rather than 'data' directory in CWD.
+* Remove --clear-dir flag to prevent user from accidentally deleting files and folders.
+* Minor refactoring of parsing/saving process.
+
 1.94.6 (2020–07–13)
 ------------------------------
 
