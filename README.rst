@@ -65,8 +65,7 @@ To get CSVs for all states, enter:
     getpop all
 
 
-CSVs will be saved in a new directory called 'data' in the current working directory. See 'advanced usage' to override
-the location where CSVs are saved.
+CSVs will be saved in the current working directory. See 'advanced usage' to specify a different location to save CSVs.
 
 Programmatic
 ================
@@ -88,7 +87,7 @@ Command line
 ================
 
 Getpop takes one or more two-letter state abbreviations as positional arguments in order to determine which state
-CSVs will be generated. Getpop's CLI also takes a handful of optional arguments that modify its actions.
+CSVs will be generated. Getpop's CLI also takes certain optional arguments that modify its actions.
 
 
 ``--save-dir, --dir``
@@ -97,14 +96,9 @@ TEXT. Path of directory where CSV files will be saved. Defaults to saving them i
 working directory. If the directory you specify doesn't exist, getpop will create it.
 
 
-``--clear-dir, --cdir``
-
-Deletes all existing files in save_dir path. Defaults to false.
-
-
 ``--help``
 
-Show this message and exit.
+Returns a list of getpop's CLI options.
 
 
 Here's an example that stores the CSVs in a directory in your current working directory called
@@ -112,7 +106,7 @@ Here's an example that stores the CSVs in a directory in your current working di
 
 ::
 
-    getpop ny ca tx --save-dir ./your_custom_directory --clear-dir
+    getpop ny ca tx --save-dir ./your_custom_directory
 
 License
 -----------

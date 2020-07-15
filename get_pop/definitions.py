@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 from typing import List, Dict, Union, Callable
 from mypy_extensions import TypedDict
+import pandas as pd
 
 # This sets our root directory as the project directory
 PACKAGE_DIR = Path(
@@ -16,7 +17,6 @@ CWD = Path(os.getcwd())
 DIR_LOGS = PACKAGE_DIR / "logs"  # main dir for log-related files
 DIR_LOGS_OUTPUT = DIR_LOGS / "output"
 DIR_LOGS_CONFIG = DIR_LOGS / "config"
-DIR_DATA = CWD / "data"
 DIR_STATIC = PACKAGE_DIR / "static"
 
 # PATHS
@@ -28,4 +28,7 @@ PATH_USA_POP = DIR_STATIC / "usa_pop_counties_2019.csv"
 selected_values_type = List[TypedDict("state_dict", {"name": str, "abbrv": str})]
 selected_fields_type = List[
     TypedDict("field_dict", {"input_name": str, "output_name": str})
+]
+parsed_data_type = List[
+    TypedDict("parsed_data_dict", {"name": str, "data": pd.DataFrame})
 ]

@@ -2,17 +2,18 @@ import logging
 from typing import List, Union
 
 from get_pop.modules.helper.misc import check_and_clear_dir
+from get_pop.modules.save.save_csv import save_csv
 from get_pop.static.constants import (
     state_index,
     value_field,
     field_cleaners,
     default_fields,
 )
-import pathlib
-from get_pop.definitions import selected_fields_type
-from get_pop.definitions import DIR_DATA
+from pathlib import Path
+from get_pop.definitions import selected_fields_type, CWD
 from get_pop.modules.init.init_program import init_program
 from get_pop.modules.parse.parse import parse_states
+from . import __project__
 
 clean_states = [x["abbrv"] for x in state_index]
 
@@ -20,7 +21,7 @@ clean_states = [x["abbrv"] for x in state_index]
 def get_pop(
     states: List[str],
     *,
-    save_dir: Union[pathlib.Path, str] = DIR_DATA,
+    save_dir: Union[Path, str] = CWD,
     clear_dir: bool = False,
     selected_fields: selected_fields_type = default_fields,
 ) -> None:
@@ -29,9 +30,8 @@ def get_pop(
 
     Args:
         states List[str]: List of states.
-        save_dir Union[pathlib.Path, str]: (Optional) Absolute path where CSV data will be stored. Defaults to /data
-            in current working directory.
-        clear_dir (bool):
+        save_dir Union[Path, str]: (Optional) Path where CSV data will be stored. Defaults to current
+            working directory.
         selected_fields (selected_fields_type): (Optional) A list of dictionaries with fields that should be
             included in the final CSV for each state. Default fields: "fips", "name", "population"
 
@@ -40,8 +40,7 @@ def get_pop(
     """
 
     # init
-    package_name = "getpop"
-    init_program(package_name)
+    init_program(__project__)
 
     # process states
     logging.info(f"Selected states: {states}")
@@ -55,18 +54,14 @@ def get_pop(
             ][0]
             selected_states.append(index_item)
 
-    # clear directory flag
-    if clear_dir:
-        check_and_clear_dir(save_dir)
-
-    parse_states(
+    parsed_data = parse_states(
         value_field=value_field,
         selected_values=selected_states,
         selected_fields=selected_fields,
         field_cleaners=field_cleaners,
-        file_partial="county",
-        save_dir=save_dir,
     )
 
+    save_csv(parsed_data, save_dir=save_dir, file_partial="county")
+
     # end
-    logging.info(f"{package_name} complete")
+    logging.info(f"{__project__} complete")
