@@ -15,14 +15,22 @@ def check_and_clear_dir(dir_path: Union[str, Path]) -> None:
     Returns:
         None
     """
-    # create or clean download dir
+    # ensures that dir_path is Path instance
     if isinstance(dir_path, str):
         dir_path = Path(dir_path)
-    if dir_path.is_dir():
-        # delete files from previous run
-        delete_dir_contents(dir_path)
-    else:
-        logging.info(f"Path {dir_path} is not a directory and can't be cleared")
+
+    if not dir_path.is_dir():
+        logging.warning(f"Path {dir_path} is not a directory and can't be cleared")
+        return
+
+    dir_contents = dir_path.glob("**/*")
+    dir_contents = [x for x in dir_contents]
+    if len(dir_contents) == 0:
+        logging.info(f"Path {dir_path} is empty. Nothing to clear")
+        return
+
+    delete_dir_contents(dir_path)
+    logging.info("Files deleted")
 
 
 def delete_dir_contents(dir_path: Union[str, Path]) -> None:
