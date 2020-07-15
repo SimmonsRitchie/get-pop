@@ -22,7 +22,6 @@ def get_pop(
     states: List[str],
     *,
     save_dir: Union[Path, str] = CWD,
-    clear_dir: bool = False,
     selected_fields: selected_fields_type = default_fields,
 ) -> None:
     """
