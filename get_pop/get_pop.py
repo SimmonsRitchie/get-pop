@@ -15,6 +15,7 @@ from get_pop.modules.init.init_program import init_program
 from get_pop.modules.parse.parse import parse_states
 from . import __project__
 
+
 clean_states = [x["abbrv"] for x in state_index]
 
 
